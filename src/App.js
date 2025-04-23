@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import {
+  Code,
+  Server,
+  Database,
+  Globe,
+  Book,
+  MessageSquare,
+  ExternalLink,
+  Github,
+  Linkedin,
+  Mail,
+  Phone,
+  Instagram,
+  Twitter,
+} from "lucide-react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Hover animation
+const animationCSS = `
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+    }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    }
 }
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+`;
 
-export default App;
+const App = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
+  const [darkMode, setDarkMode] = useState(false);
+};
