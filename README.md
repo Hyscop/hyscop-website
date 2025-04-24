@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+# Mehmet Duman - Personal Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive personal portfolio website showcasing Mehmet Duman's skills, experience, and projects as a Software Engineer and Computer Engineering student.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Responsive Design**: Fully responsive layout that works seamlessly on all devices
+- **Dark/Light Mode**: Toggle between dark and light themes
+- **Animated Elements**: Smooth animations when scrolling through sections
+- **Modern UI**: Clean, professional interface with elegant design elements
+- **SEO Optimized**: Built with search engines in mind to improve visibility
+- **Accessible**: Follows accessibility best practices
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React**: For building the user interface
+- **Tailwind CSS**: For styling with utility classes
+- **Lucide React**: For high-quality icons
+- **Modern JavaScript (ES6+)**: For interactive elements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation
 
-### `npm test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```
+   git clone https://github.com/Hyscop/portfolio-website.git
+   cd portfolio-website
 
-### `npm run build`
+   ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Install dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```
+   npm install
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```
 
-### `npm run eject`
+3. Start the development server:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```
+   npm start
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. Open your browser and visit `http://localhost:3000`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Customization
 
-## Learn More
+### Personal Information
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Update your personal information in the `App.js` file:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Name
+- Job title
+- About section
+- Experience
+- Education
+- Skills
+- Contact information
 
-### Code Splitting
+### Colors
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The color scheme can be customized in the Tailwind configuration file or by modifying color classes in the components:
 
-### Analyzing the Bundle Size
+- Primary colors: `#F1EFEC` (light cream), `#D4C9BE` (warm beige), `#123458` (navy blue), `#030303` (near black)
+- Dark mode colors are also customizable
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Adding Projects
 
-### Making a Progressive Web App
+To add projects to your portfolio, modify the projects section by adding additional project cards with:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Project title
+- Description
+- Technologies used
+- Links to GitHub/live demo
+- Screenshot or image
