@@ -14,6 +14,7 @@ import {
   Instagram,
   Twitter,
   Divide,
+  Music,
 } from "lucide-react";
 
 // Hover animation
@@ -111,7 +112,7 @@ const App = () => {
         />
         <meta
           name="twitter:description"
-          content="Full-stack developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
+          content="Developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
         />
       </div>
       {/* Dark mode toggle */}
@@ -325,7 +326,180 @@ const App = () => {
                   </span>
                 </h1>
               </div>
+              <div className="overflow-hidden">
+                <h2
+                  className={`text-xl md:text-2xl mb-6 animate-fade-in-up ${
+                    darkMode ? "text-gray-300" : "text-gray-600"
+                  }`}
+                  style={{ animationDelay: "0.5s" }}
+                >
+                  Software Developer & Computer Engineer
+                </h2>
+              </div>
+              <div className="overflow-hidden">
+                <p
+                  className={`mb-8 max-w-lg animate-fade-in-up ${
+                    darkMode ? "text-gray-400" : "text-gray-700"
+                  }`}
+                  style={{ animationDelay: "0.7s" }}
+                >
+                  Passionate about building scalable and efficient software
+                  solutions with expertise in Java, Spring Boot, .NET Core,
+                  React, Angular, and MySQL.
+                </p>
+              </div>
+              <div
+                className="flex flex-wrap space-x-3 animate-fade-in-up"
+                style={{ animationDelay: "0.9s" }}
+              >
+                <SocialLink
+                  href="https://github.com/Hyscop"
+                  icon={<Github size={20} />}
+                  label="Github"
+                  darkMode={darkMode}
+                />
+                <SocialLink
+                  href="https://linkedin.com/in/mehmetduman3"
+                  icon={<Linkedin size={20} />}
+                  label="LinkedIn"
+                  darkMode={darkMode}
+                />
+                <SocialLink
+                  href="https://x.com/hyscopp"
+                  icon={<Twitter size={20} />}
+                  label="X"
+                  darkMode={darkMode}
+                />
+                <SocialLink
+                  href="https://www.instagram.com/mehmett.dmnn/"
+                  icon={<Instagram size={20} />}
+                  label="Instagram"
+                  darkMode={darkMode}
+                />
+                <SocialLink
+                  href="https://open.spotify.com/user/11183992403"
+                  icon={<Music size={20} />}
+                  label="Spotify"
+                  darkMode={darkMode}
+                />
+                <SocialLink
+                  href="mailto:mduman2003@gmail.com"
+                  icon={<Mail size={20} />}
+                  label="Email"
+                  darkMode={darkMode}
+                />
+              </div>
             </div>
+            <div
+              className="md:w-2/5 relative animate-fade-in-up"
+              style={{ animationDelay: "1.1s" }}
+            >
+              <div
+                className={`absolute inset-0 rounded-2xl -rotate-6 scale-95 ${
+                  darkMode ? "bg-indigo-600/20" : "bg-blue-400/20"
+                } backdrop-blur-sm`}
+              ></div>
+              <div
+                className={`absolute inset-0 rounded-2xl rotate-3 scale-95 ${
+                  darkMode ? "bg-violet-600/20" : "bg-purple-400/20"
+                } backdrop-blur-sm`}
+              ></div>
+              <div
+                className={`relative ${
+                  darkMode
+                    ? "bg-gradient-to-br from-indigo-800/80 to-violet-700/80"
+                    : "bg-gradient-to-br from-blue-600 to-indigo-500"
+                } rounded-2xl p-1 shadow-xl backdrop-blur-sm`}
+              >
+                <div
+                  className={`${
+                    darkMode ? "bg-gray-900" : "bg-white"
+                  } rounded-xl p-6`}
+                >
+                  <div
+                    className={`flex items-center justify-center w-full h-64 ${
+                      darkMode ? "bg-gray-800" : "bg-gray-100"
+                    } rounded-lg overflow-hidden`}
+                  >
+                    <img
+                      src="/api/placeholder/400/320"
+                      alt="placeholder"
+                      className="rounded-lg hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section
+        id="about"
+        className={`py-16 relative overflow-hidden ${
+          darkMode ? "bg-gray-800" : "bg-white"
+        }`}
+      >
+        <div className="container mx-auto px-6 realitive z-10">
+          <SectionTitle darkMode={darkMode}>About Me</SectionTitle>
+          <div
+            className={`p-8 rounded-2x1 ${
+              darkMode
+                ? "bg-gray-900/80 shadow-lg shadow-indigo-500/10"
+                : "bg-white/80 shadow-x1"
+            } transform hover:scale-[1.01] transition-all duration-300`}
+          >
+            <p
+              className={`text-lg mb-6 ${
+                darkMode ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              As a Computer Engineering student at Eskişehir Technical
+              University, I'm passionate about building scalable and efficient
+              software solutions that make a difference. I approach each project
+              with both technical precision and creative problem-solving,
+              constantly seeking opportunities to expand my knowledge and skills
+              in the ever-evolving tech landscape.
+            </p>
+            <p
+              className={`text-lg mb-6 ${
+                darkMode ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              My technical toolkit includes Java, Spring Boot, .NET Core, React,
+              Angular, and MySQL, complemented by a solid understanding of
+              Microservices architecture and Docker containerization. As an AWS
+              Academy Graduate, I bring cloud computing expertise that enhances
+              my ability to design and implement comprehensive solutions.
+              Currently, I'm exploring the exciting realms of AI and Machine
+              Learning, strengthening my capabilities in Python, data analysis,
+              and AI model development.
+            </p>
+            <p
+              className={`text-lg mb-6 ${
+                darkMode ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              Beyond the code, music is an essential part of my life, providing
+              inspiration and balance to my technical pursuits. When I'm not
+              developing software, you'll likely find me engaged in competitive
+              table tennis matches or unwinding with video games across various
+              genres. And if you're wondering about the cat photos that might
+              occasionally appear on my desk—yes, I'm unabashedly a cat person!
+            </p>
+            <p
+              className={`text-lg ${
+                darkMode ? "text-gray-300" : "text-gray-700"
+              }`}
+            >
+              I thrive in collaborative environments where diverse perspectives
+              converge to solve complex challenges. Whether working
+              independently or as part of a team, I remain dedicated to
+              continuous learning and innovation always eager to create elegant
+              solutions that address real-world problems while maintaining a
+              healthy work-life balance through my personal interests.
+            </p>
           </div>
         </div>
       </section>
@@ -377,4 +551,38 @@ const MobileNavLink = ({ href, children, onClick, darkMode }) => {
   );
 };
 
+const SocialLink = ({ href, icon, label, darkMode }) => {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`inline-flex items-center justify-center h-10 w-10 rounded-full ${
+        darkMode
+          ? "bg-gray-800 text-indigo-400 hover:bg-gray-700 hover:text-indigo-300"
+          : "bg-[#D4C9BE] text-[#123458] hover:bg-[#123458] hover:text-white"
+      } transition-all duration-300 transform hover:scale-110 mb-2 mr-1`}
+      aria-label={label}
+    >
+      {icon}
+    </a>
+  );
+};
+
+const SectionTitle = ({ children, darkMode }) => {
+  return (
+    <h2 className="text-3xl font-bold text-center mb-12 relative">
+      <span
+        className={`relative z-10 ${darkMode ? "text-white" : "text-gray-900"}`}
+      >
+        {children}
+      </span>
+      <span
+        className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 ${
+          darkMode ? "bg-indigo-500" : "bg-blue-500"
+        } rounded-full`}
+      ></span>
+    </h2>
+  );
+};
 export default App;

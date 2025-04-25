@@ -25,21 +25,18 @@ A modern, responsive personal portfolio website showcasing Mehmet Duman's skills
    ```
    git clone https://github.com/Hyscop/portfolio-website.git
    cd portfolio-website
-
    ```
 
 2. Install dependencies:
 
    ```
    npm install
-
    ```
 
 3. Start the development server:
 
    ```
    npm start
-
    ```
 
 4. Open your browser and visit `http://localhost:3000`
