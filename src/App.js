@@ -102,32 +102,34 @@ const App = () => {
     >
       {/* SEO Optimization */}
       <div className="hidden">
-        <h1>Mehmet Duman - Software Engineer & Computer Engineering Student</h1>
+        <h1>
+          Mehmet Duman - Software Developer & Computer Engineering Student
+        </h1>
         <meta
           name="description"
-          content="Mehmet Duman | Full-stack developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
+          content="Mehmet Duman | Software Developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
         />
         <meta
           name="keywords"
-          content="Mehmet Duman, Software Engineer, Computer Engineering, Java, Spring Boot, .NET Core, React, Angular, MySQL, AWS"
+          content="Mehmet Duman, Software Developer, Computer Engineering, Java, Spring Boot, .NET Core, React, Angular, MySQL, AWS"
         />
         <meta
           property="og:title"
-          content="Mehmet Duman - Software Engineer & Computer Engineering Student"
+          content="Mehmet Duman - Software Developer & Computer Engineering Student"
         />
         <meta
           property="og:description"
-          content="Full-stack developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
+          content="Software developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:title"
-          content="Mehmet Duman - Software Engineer & Computer Engineering Student"
+          content="Mehmet Duman - Software Developer & Computer Engineering Student"
         />
         <meta
           name="twitter:description"
-          content="Full-stack developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
+          content="Software developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
         />
       </div>
 
@@ -504,9 +506,7 @@ const App = () => {
                 Beyond the code, music is an essential part of my life,
                 providing inspiration and balance to my technical pursuits. When
                 I'm not developing software, you'll likely find me engaged in
-                competitive table tennis matches or unwinding with video games
-                across various genres. And if you're wondering about the cat
-                photos that might occasionally appear on my desk—yes, I'm
+                unwinding with video games across various genres. And I'm
                 unabashedly a cat person!
               </p>
               <p
