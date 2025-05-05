@@ -1,6 +1,8 @@
 # Mehmet Duman - Personal Portfolio
 
-A modern, responsive personal portfolio website showcasing Mehmet Duman's skills, experience, and projects as a Software Engineer and Computer Engineering student.
+A modern, responsive personal portfolio website showcasing my skills, experience, and projects as a Software Engineer and Computer Engineering student.
+
+![Portfolio Preview](https://drive.google.com/file/d/1Yi1vTQhpjLkw04ul6jIjIT4vGfjiAHHg/view?usp=sharing)
 
 ## Features
 
@@ -71,3 +73,16 @@ To add projects to your portfolio, modify the projects section by adding additio
 - Technologies used
 - Links to GitHub/live demo
 - Screenshot or image
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Credits
+
+- Design and implementation by Mehmet Duman
+- Icons from [Lucide React](https://lucide.dev/)
+
+---
+
+Feel free to reach out if you have any questions or need assistance with customization!
