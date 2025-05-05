@@ -325,8 +325,11 @@ const App = () => {
       </header>
 
       {/* Home Section */}
-      <section id="home" className="pt-24 pb-12 md:pt-32 md:pb-24 relative">
-        <div className="container mx-auto px-6 relative z-10">
+      <section
+        id="home"
+        className="pt-24 pb-12 md:pt-32 md:pb-24 relative px-4 md:px-8"
+      >
+        <div className="container mx-auto px-6 relative z-10 ">
           <div className="flex flex-col items-center md:flex-row md:justify-between">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <div className="overflow-hidden">
@@ -1012,7 +1015,7 @@ const App = () => {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-            <p>Built with React and Tailwind CSS | Last updated: April 2025</p>
+            <p>Built with React and Tailwind CSS | Last updated: May 2025</p>
           </div>
         </div>
       </footer>
