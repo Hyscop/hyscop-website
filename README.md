@@ -2,8 +2,6 @@
 
 A modern, responsive personal portfolio website showcasing my skills, experience, and projects as a Software Engineer and Computer Engineering student.
 
-![Portfolio Preview](https://drive.google.com/file/d/1Yi1vTQhpjLkw04ul6jIjIT4vGfjiAHHg/view?usp=sharing)
-
 ## Features
 
 - **Responsive Design**: Fully responsive layout that works seamlessly on all devices
