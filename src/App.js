@@ -657,10 +657,9 @@ const App = () => {
               skills={[
                 "Spring Boot",
                 ".NET Core",
-                "Entity Framework Core",
-                "Angular",
                 "ReactJS",
                 "Bootstrap",
+                "Tailwind CSS",
               ]}
               darkMode={darkMode}
             />
@@ -675,8 +674,6 @@ const App = () => {
                 "Microservices",
                 "Docker",
                 "TDD",
-                "Swagger UI",
-                "AutoMapper",
               ]}
               darkMode={darkMode}
             />
@@ -846,7 +843,7 @@ const App = () => {
               Feel free to reach out to me for collaboration or opportunities.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <ContactCard
                 icon={<Mail />}
                 title="Email"
