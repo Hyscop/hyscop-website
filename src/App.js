@@ -11,7 +11,6 @@ import {
   Github,
   Linkedin,
   Mail,
-  Phone,
   Instagram,
   Twitter,
   Music,
@@ -406,7 +405,7 @@ const App = () => {
                   darkMode={darkMode}
                 />
                 <SocialLink
-                  href="mailto:mduman2003@gmail.com"
+                  href="mailto:mehmetduman.dev@gmail.com"
                   icon={<Mail size={20} />}
                   label="Email"
                   darkMode={darkMode}
@@ -619,7 +618,7 @@ const App = () => {
 
             <EducationCard
               institution="Egefen Anatolian High School"
-              degree="High School Diploma"
+              degree="High School Diploma - Valedictorian"
               location="Aydın, Turkey"
               duration="Sep 2017 - Jul 2021"
               darkMode={darkMode}
@@ -851,16 +850,8 @@ const App = () => {
               <ContactCard
                 icon={<Mail />}
                 title="Email"
-                info="mduman2003@gmail.com"
-                link="mailto:mduman2003@gmail.com"
-                darkMode={darkMode}
-              />
-
-              <ContactCard
-                icon={<Phone />}
-                title="Phone"
-                info="+90 544 719 1494"
-                link="tel:+905447191494"
+                info="mehmetduman.dev@gmail.com"
+                link="mailto:mehmetduman.dev@gmail.com"
                 darkMode={darkMode}
               />
 
@@ -913,7 +904,7 @@ const App = () => {
                   darkMode={darkMode}
                 />
                 <SocialLink
-                  href="mailto:mduman2003@gmail.com"
+                  href="mailto:mehmetduman.dev@gmail.com"
                   icon={<Mail size={20} />}
                   label="Email"
                   darkMode={darkMode}
@@ -1002,7 +993,7 @@ const App = () => {
                 <Instagram />
               </a>
               <a
-                href="mailto:mduman2003@gmail.com"
+                href="mailto:mehmetduman.dev@gmail.com"
                 className={`${
                   darkMode
                     ? "text-gray-400 hover:text-indigo-400"
@@ -1015,7 +1006,7 @@ const App = () => {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center text-sm text-gray-500">
-            <p>Built with React and Tailwind CSS | Last updated: May 2025</p>
+            <p>Last updated: May 2025</p>
           </div>
         </div>
       </footer>
