@@ -101,34 +101,32 @@ const App = () => {
     >
       {/* SEO Optimization */}
       <div className="hidden">
-        <h1>
-          Mehmet Duman - Software Developer & Computer Engineering Student
-        </h1>
+        <h1>Mehmet Duman - Software Developer & Computer Engineer</h1>
         <meta
           name="description"
-          content="Mehmet Duman | Software Developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
+          content="Mehmet Duman | Software Developer specializing in Java, Spring Boot, .NET Core, React and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
         />
         <meta
           name="keywords"
-          content="Mehmet Duman, Software Developer, Computer Engineering, Java, Spring Boot, .NET Core, React, Angular, MySQL, AWS"
+          content="Mehmet Duman, Software Developer, Computer Engineering, Java, Spring Boot, .NET Core, React, MySQL, AWS"
         />
         <meta
           property="og:title"
-          content="Mehmet Duman - Software Developer & Computer Engineering Student"
+          content="Mehmet Duman - Software Developer & Computer Engineer"
         />
         <meta
           property="og:description"
-          content="Software developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
+          content="Software developer specializing in Java, Spring Boot, .NET Core, React and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
         />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
         <meta
           name="twitter:title"
-          content="Mehmet Duman - Software Developer & Computer Engineering Student"
+          content="Mehmet Duman - Software Developer & Computer Engineer"
         />
         <meta
           name="twitter:description"
-          content="Software developer specializing in Java, Spring Boot, .NET Core, React, Angular, and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
+          content="Software developer specializing in Java, Spring Boot, .NET Core, React and MySQL. AWS Academy Graduate with experience in microservices and cloud computing."
         />
       </div>
 
@@ -355,7 +353,7 @@ const App = () => {
                   }`}
                   style={{ animationDelay: "0.5s" }}
                 >
-                  Software Developer & Computer Engineering Student
+                  Software Developer & Computer Engineer
                 </h2>
               </div>
               <div className="overflow-hidden">
@@ -367,7 +365,7 @@ const App = () => {
                 >
                   Passionate about building scalable and efficient software
                   solutions with expertise in Java, Spring Boot, .NET Core,
-                  React, Angular, and MySQL.
+                  React and MySQL.
                 </p>
               </div>
               <div
@@ -479,7 +477,7 @@ const App = () => {
                   darkMode ? "text-gray-300" : "text-gray-700"
                 }`}
               >
-                As a Computer Engineering student at Eskişehir Technical
+                As a Computer Engineer graduate from Eskişehir Technical
                 University, I'm passionate about building scalable and efficient
                 software solutions that make a difference. I approach each
                 project with both technical precision and creative
@@ -492,8 +490,8 @@ const App = () => {
                 }`}
               >
                 My technical toolkit includes Java, Spring Boot, .NET Core,
-                React, Angular, and MySQL, complemented by a solid understanding
-                of Microservices architecture and Docker containerization. As an
+                React and MySQL, complemented by a solid understanding of
+                Microservices architecture and Docker containerization. As an
                 AWS Academy Graduate, I bring cloud computing expertise that
                 enhances my ability to design and implement comprehensive
                 solutions. Currently, I'm exploring the exciting realms of AI
@@ -610,9 +608,9 @@ const App = () => {
 
             <EducationCard
               institution="Eskişehir Technical University"
-              degree="Bachelor of Science in Computer Engineering"
+              degree="Bachelor of Science in Computer Engineering - GPA: 3.14/4.00"
               location="Eskişehir, Turkey"
-              duration="Sep 2021 - Present"
+              duration="Sep 2021 - June 2025"
               darkMode={darkMode}
             />
 
