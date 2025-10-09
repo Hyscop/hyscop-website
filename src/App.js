@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import profilePhoto from "./images/IMG_7925.png";
+import profilePhoto from "./images/IMG_7668.JPEG";
 import {
   Code,
   Server,
@@ -364,8 +364,7 @@ const App = () => {
                   style={{ animationDelay: "0.7s" }}
                 >
                   Passionate about building scalable and efficient software
-                  solutions with expertise in Java, Spring Boot, .NET Core,
-                  React and MySQL.
+                  solutions with expertise in Java, C#, Spring Boot, .NET Core.
                 </p>
               </div>
               <div
@@ -445,7 +444,8 @@ const App = () => {
                       src={profilePhoto}
                       sizes="(max-width: 768px) 100vw, 50vw"
                       alt="Mehmet Duman - Software Engineer"
-                      className="rounded-lg hover:scale-105 transition-transform duration-500 object-cover object-top w-full h-full"
+                      className="rounded-lg hover:scale-105 transition-transform duration-500 object-cover  w-full h-full"
+                      style={{ objectPosition: "center 40%" }}
                     />
                   </div>
                 </div>

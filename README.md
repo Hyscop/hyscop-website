@@ -62,16 +62,6 @@ The color scheme can be customized in the Tailwind configuration file or by modi
 - Primary colors: `#F1EFEC` (light cream), `#D4C9BE` (warm beige), `#123458` (navy blue), `#030303` (near black)
 - Dark mode colors are also customizable
 
-### Adding Projects
-
-To add projects to your portfolio, modify the projects section by adding additional project cards with:
-
-- Project title
-- Description
-- Technologies used
-- Links to GitHub/live demo
-- Screenshot or image
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
