@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Hyscop",
+  "name": "Mehmet Duman | Software Engineer Portfolio",
+  "description": "Personal portfolio of Mehmet Duman (Hyscop) - Software Engineer specializing in Java, Spring Boot, .NET Core, and cloud technologies",
   "icons": [
     {
       "src": "h.ico",
@@ -10,6 +11,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0a0a0f",
+  "background_color": "#0a0a0f"
 }
