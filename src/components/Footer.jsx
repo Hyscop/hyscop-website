@@ -5,7 +5,6 @@ import {
   Twitter,
   Instagram,
   Mail,
-  Heart,
   Terminal,
 } from "lucide-react";
 
@@ -70,7 +69,7 @@ const Footer = () => {
           {/* Quick Links */}
           <div>
             <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-              <span className="text-cyan-400">//</span> Quick Links
+              <span className="text-cyan-400">{"//"}</span> Quick Links
             </h4>
             <div className="grid grid-cols-2 gap-2">
               {navLinks.map((link) => (
@@ -88,7 +87,7 @@ const Footer = () => {
           {/* Social */}
           <div>
             <h4 className="text-white font-bold mb-4 flex items-center gap-2">
-              <span className="text-fuchsia-400">//</span> Connect
+              <span className="text-fuchsia-400">{"//"}</span> Connect
             </h4>
             <div className="flex gap-3">
               {socialLinks.map(({ href, icon: Icon, label }) => (

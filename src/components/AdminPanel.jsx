@@ -20,7 +20,6 @@ import {
   ShieldCheck,
   Upload,
   Link,
-  Image,
 } from "lucide-react";
 import { projectsApi, authApi, storageApi } from "../lib/supabase";
 
@@ -37,11 +36,13 @@ const AdminPanel = ({ projects, onProjectsChange, onClose }) => {
   const [message, setMessage] = useState({ type: "", text: "" });
   const [imageMode, setImageMode] = useState("url"); // "url" or "upload"
   const [uploadingImage, setUploadingImage] = useState(false);
+  const [uploadingGallery, setUploadingGallery] = useState(false);
 
   const [formData, setFormData] = useState({
     title: "",
     description: "",
     image: "",
+    images: [], // Gallery images
     tags: "",
     github: "",
     live: "",
@@ -118,6 +119,7 @@ const AdminPanel = ({ projects, onProjectsChange, onClose }) => {
       title: "",
       description: "",
       image: "",
+      images: [],
       tags: "",
       github: "",
       live: "",
@@ -157,11 +159,54 @@ const AdminPanel = ({ projects, onProjectsChange, onClose }) => {
     }
   };
 
+  const handleGalleryUpload = async (e) => {
+    const files = Array.from(e.target.files);
+    if (!files.length) return;
+
+    // Check file sizes
+    for (const file of files) {
+      if (file.size > 5 * 1024 * 1024) {
+        setMessage({ type: "error", text: `${file.name} is larger than 5MB` });
+        return;
+      }
+    }
+
+    setUploadingGallery(true);
+    try {
+      const uploadPromises = files.map((file) => storageApi.uploadImage(file));
+      const uploadedUrls = await Promise.all(uploadPromises);
+      setFormData({
+        ...formData,
+        images: [...formData.images, ...uploadedUrls],
+      });
+      setMessage({
+        type: "success",
+        text: `${files.length} image(s) uploaded to gallery!`,
+      });
+    } catch (error) {
+      console.error("Gallery upload error:", error);
+      setMessage({
+        type: "error",
+        text: `Gallery upload failed: ${error.message}`,
+      });
+    } finally {
+      setUploadingGallery(false);
+    }
+  };
+
+  const removeGalleryImage = (indexToRemove) => {
+    setFormData({
+      ...formData,
+      images: formData.images.filter((_, index) => index !== indexToRemove),
+    });
+  };
+
   const handleEdit = (project) => {
     setFormData({
       title: project.title,
       description: project.description,
       image: project.image || "",
+      images: Array.isArray(project.images) ? project.images : [],
       tags: Array.isArray(project.tags) ? project.tags.join(", ") : "",
       github: project.github || "",
       live: project.live || "",
@@ -194,6 +239,7 @@ const AdminPanel = ({ projects, onProjectsChange, onClose }) => {
           title: formData.title,
           description: formData.description,
           image: formData.image || null,
+          images: formData.images.length > 0 ? formData.images : null,
           tags: tagsArray,
           github: formData.github || null,
           live: formData.live || null,
@@ -205,6 +251,7 @@ const AdminPanel = ({ projects, onProjectsChange, onClose }) => {
           title: formData.title,
           description: formData.description,
           image: formData.image || null,
+          images: formData.images.length > 0 ? formData.images : null,
           tags: tagsArray,
           github: formData.github || null,
           live: formData.live || null,
@@ -739,6 +786,69 @@ const AdminPanel = ({ projects, onProjectsChange, onClose }) => {
                         </button>
                       </div>
                     )}
+                  </div>
+
+                  {/* Gallery Images Section */}
+                  <div>
+                    <label className="block text-gray-400 text-sm mb-2">
+                      Gallery Images (shown on project detail page)
+                    </label>
+                    
+                    {/* Gallery upload area */}
+                    <label className="flex flex-col items-center justify-center w-full h-24 border-2 border-dashed border-gray-600 rounded-lg cursor-pointer hover:border-purple-500/50 transition-colors bg-gray-900/50">
+                      <div className="flex flex-col items-center justify-center py-4">
+                        {uploadingGallery ? (
+                          <Loader2 className="w-6 h-6 text-purple-400 animate-spin" />
+                        ) : (
+                          <>
+                            <Upload className="w-6 h-6 text-gray-500 mb-1" />
+                            <p className="text-sm text-gray-400">
+                              Add gallery images
+                            </p>
+                            <p className="text-xs text-gray-500">
+                              Select multiple files
+                            </p>
+                          </>
+                        )}
+                      </div>
+                      <input
+                        type="file"
+                        className="hidden"
+                        accept="image/*"
+                        multiple
+                        onChange={handleGalleryUpload}
+                        disabled={uploadingGallery}
+                      />
+                    </label>
+
+                    {/* Gallery thumbnails */}
+                    {formData.images.length > 0 && (
+                      <div className="mt-3 grid grid-cols-4 gap-2">
+                        {formData.images.map((imgUrl, index) => (
+                          <div key={index} className="relative group">
+                            <img
+                              src={imgUrl}
+                              alt={`Gallery ${index + 1}`}
+                              className="w-full h-16 object-cover rounded border border-gray-700"
+                              onError={(e) => {
+                                e.target.style.display = "none";
+                              }}
+                            />
+                            <button
+                              type="button"
+                              onClick={() => removeGalleryImage(index)}
+                              className="absolute -top-1 -right-1 p-0.5 bg-red-500/90 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"
+                            >
+                              <X className="w-3 h-3 text-white" />
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    
+                    <p className="text-xs text-gray-500 mt-2">
+                      {formData.images.length} image(s) in gallery
+                    </p>
                   </div>
 
                   <div>

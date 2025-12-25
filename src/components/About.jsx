@@ -106,7 +106,7 @@ const About = () => {
               {/* Quick Stats */}
               <div className="cyber-card p-6 rounded-lg">
                 <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="text-cyan-400">//</span> Quick Stats
+                  <span className="text-cyan-400">{"//"}</span> Quick Stats
                 </h4>
                 <div className="space-y-4">
                   <div className="flex justify-between items-center">
@@ -141,7 +141,7 @@ const About = () => {
               {/* Interests */}
               <div className="cyber-card p-6 rounded-lg">
                 <h4 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                  <span className="text-fuchsia-400">//</span> Beyond Code
+                  <span className="text-fuchsia-400">{"//"}</span> Beyond Code
                 </h4>
                 <div className="grid grid-cols-2 gap-3">
                   {highlights.map(({ icon: Icon, label, color }) => (

@@ -64,6 +64,18 @@ export const projectsApi = {
     return data;
   },
 
+  // Fetch single project by ID
+  async getById(id) {
+    const { data, error } = await supabase
+      .from("projects")
+      .select("*")
+      .eq("id", id)
+      .single();
+
+    if (error) throw error;
+    return data;
+  },
+
   // Create a new project
   async create(project) {
     const { data, error } = await supabase
@@ -73,6 +85,7 @@ export const projectsApi = {
           title: project.title,
           description: project.description,
           image: project.image || null,
+          images: project.images || [],
           tags: project.tags || [],
           github: project.github || null,
           live: project.live || null,
@@ -94,6 +107,7 @@ export const projectsApi = {
         title: project.title,
         description: project.description,
         image: project.image || null,
+        images: project.images || [],
         tags: project.tags || [],
         github: project.github || null,
         live: project.live || null,
@@ -126,7 +140,7 @@ export const storageApi = {
       .substring(2)}.${fileExt}`;
     const filePath = `project-images/${fileName}`;
 
-    const { data, error } = await supabase.storage
+    const { error } = await supabase.storage
       .from("images")
       .upload(filePath, file, {
         cacheControl: "3600",

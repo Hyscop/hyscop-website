@@ -41,7 +41,7 @@ const Education = () => {
             <span className="text-cyan-400"> /&gt;</span>
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-fuchsia-400 mx-auto" />
-          <p className="text-gray-400 mt-4">// Academic Background</p>
+          <p className="text-gray-400 mt-4">{"// Academic Background"}</p>
         </div>
 
         {/* Education Cards */}

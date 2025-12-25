@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   Header,
   Hero,
@@ -11,10 +12,56 @@ import {
   Footer,
   AdminPanel,
 } from "./components";
+import ProjectDetail from "./components/ProjectDetail";
 import { projectsApi } from "./lib/supabase";
 
-const App = () => {
+// Home Page Component
+const HomePage = ({ projects, loading, error, onOpenAdmin }) => {
   const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section");
+      const scrollPosition = window.scrollY + 200;
+
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
+
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          setActiveSection(sectionId);
+        }
+      });
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-[#0a0a0f] cyber-grid-bg scanlines">
+      <Header activeSection={activeSection} />
+
+      <main className="relative z-10">
+        <Hero />
+        <About />
+        <Experience />
+        <Education />
+        <Skills />
+        <Projects projects={projects} loading={loading} error={error} />
+        <Contact onOpenAdmin={onOpenAdmin} />
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+const App = () => {
   const [showAdmin, setShowAdmin] = useState(false);
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -40,29 +87,6 @@ const App = () => {
   };
 
   useEffect(() => {
-    const handleScroll = () => {
-      const sections = document.querySelectorAll("section");
-      const scrollPosition = window.scrollY + 200;
-
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute("id");
-
-        if (
-          scrollPosition >= sectionTop &&
-          scrollPosition < sectionTop + sectionHeight
-        ) {
-          setActiveSection(sectionId);
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.ctrlKey && e.shiftKey && e.key === "A") {
         e.preventDefault();
@@ -75,20 +99,21 @@ const App = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0f] cyber-grid-bg scanlines">
-      <Header activeSection={activeSection} />
-
-      <main className="relative z-10">
-        <Hero />
-        <About />
-        <Experience />
-        <Education />
-        <Skills />
-        <Projects projects={projects} loading={loading} error={error} />
-        <Contact onOpenAdmin={() => setShowAdmin(true)} />
-      </main>
-
-      <Footer />
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <HomePage
+              projects={projects}
+              loading={loading}
+              error={error}
+              onOpenAdmin={() => setShowAdmin(true)}
+            />
+          }
+        />
+        <Route path="/project/:id" element={<ProjectDetail />} />
+      </Routes>
 
       {showAdmin && (
         <AdminPanel
@@ -97,7 +122,7 @@ const App = () => {
           onClose={() => setShowAdmin(false)}
         />
       )}
-    </div>
+    </Router>
   );
 };
 

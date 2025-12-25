@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   ExternalLink,
   Github,
@@ -6,9 +7,11 @@ import {
   Star,
   Loader2,
   AlertCircle,
+  ArrowRight,
 } from "lucide-react";
 
 const Projects = ({ projects = [], loading = false, error = null }) => {
+  const navigate = useNavigate();
   const featuredProjects = projects.filter((p) => p.featured);
   const otherProjects = projects.filter((p) => !p.featured);
 
@@ -69,7 +72,8 @@ const Projects = ({ projects = [], loading = false, error = null }) => {
               {featuredProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="cyber-card rounded-lg overflow-hidden group"
+                  className="cyber-card rounded-lg overflow-hidden group cursor-pointer"
+                  onClick={() => navigate(`/project/${project.id}`)}
                 >
                   {/* Project Image or Placeholder */}
                   <div className="h-48 relative overflow-hidden bg-gradient-to-br from-cyan-900/20 to-fuchsia-900/20">
@@ -120,6 +124,7 @@ const Projects = ({ projects = [], loading = false, error = null }) => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="flex items-center gap-2 text-gray-400 hover:text-cyan-400 transition-colors"
                         >
                           <Github className="w-5 h-5" />
@@ -131,17 +136,17 @@ const Projects = ({ projects = [], loading = false, error = null }) => {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="flex items-center gap-2 text-gray-400 hover:text-fuchsia-400 transition-colors"
                         >
                           <ExternalLink className="w-5 h-5" />
                           <span className="text-sm">Live Demo</span>
                         </a>
                       )}
-                      {!project.github && !project.live && (
-                        <span className="text-gray-500 text-sm">
-                          Private Project
-                        </span>
-                      )}
+                      <span className="flex items-center gap-1 text-cyan-400 text-sm ml-auto group-hover:translate-x-1 transition-transform">
+                        View Details
+                        <ArrowRight className="w-4 h-4" />
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -161,7 +166,8 @@ const Projects = ({ projects = [], loading = false, error = null }) => {
               {otherProjects.map((project) => (
                 <div
                   key={project.id}
-                  className="cyber-card p-6 rounded-lg hover:border-cyan-400/50 transition-all duration-300"
+                  className="cyber-card p-6 rounded-lg hover:border-cyan-400/50 transition-all duration-300 cursor-pointer group"
+                  onClick={() => navigate(`/project/${project.id}`)}
                 >
                   {/* Header */}
                   <div className="flex items-start justify-between mb-4">
@@ -172,6 +178,7 @@ const Projects = ({ projects = [], loading = false, error = null }) => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="text-gray-400 hover:text-cyan-400 transition-colors"
                         >
                           <Github className="w-5 h-5" />
@@ -182,6 +189,7 @@ const Projects = ({ projects = [], loading = false, error = null }) => {
                           href={project.live}
                           target="_blank"
                           rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
                           className="text-gray-400 hover:text-fuchsia-400 transition-colors"
                         >
                           <ExternalLink className="w-5 h-5" />
@@ -191,7 +199,7 @@ const Projects = ({ projects = [], loading = false, error = null }) => {
                   </div>
 
                   {/* Content */}
-                  <h4 className="text-lg font-bold text-white mb-2">
+                  <h4 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
                     {project.title}
                   </h4>
                   <p className="text-gray-400 text-sm mb-4 line-clamp-3">
